@@ -1,0 +1,65 @@
+.text-white {
+  color: white;
+}
+
+.white {
+  background-color: white;
+}
+
+.text-success {
+  color: #2ecc71;
+}
+
+.success {
+  background-color: #2ecc71;
+}
+
+.text-error {
+  color: #e74c3c;
+}
+
+.error {
+  background-color: #e74c3c;
+}
+
+.text-red {
+  color: #c0392b;
+}
+
+.red {
+  background-color: #c0392b;
+}
+
+.text-warn {
+  color: #f1c40f;
+}
+
+.warn {
+  background-color: #f1c40f;
+}
+
+.text-orange {
+  color: #e67e22;
+}
+
+.orange {
+  background-color: #e67e22;
+}
+
+.text-blue {
+  color: #3498db;
+}
+
+.blue {
+  background-color: #3498db;
+}
+
+.text-darkblue {
+  color: #2980b9;
+}
+
+.darkblue {
+  background-color: #2980b9;
+}
+
+/*# sourceMappingURL=wkfrontend.css.map */
