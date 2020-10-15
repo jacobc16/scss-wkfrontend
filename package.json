@@ -3,14 +3,16 @@
   "version": "1.0.3",
   "description": "A set of front end tools/components",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "csso-cli": "^3.0.0",
     "js-wktools": "^2.0.0",
-    "sass": "^1.27.0"
+    "sass": "^1.27.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
-  "devDependencies": {},
   "scripts": {
-    "build": "sass css/wkfrontend.scss css/wkfrontend.css",
+    "build": "webpack && sass css/wkfrontend.scss css/wkfrontend.css",
     "minify": "csso css/wkfrontend.css -o css/wkfrontend.min.css",
     "final": "npm run build && npm run minify",
     "update": "npm run final && npm publish"
