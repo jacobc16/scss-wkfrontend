@@ -1,4 +1,7 @@
-$white: #ffffff;
+$white: (
+	"main": #ffffff,
+	"skip-light": true
+);
 
 $success: #2ecc71;
 
@@ -66,26 +69,42 @@ $darken: (
 );
 
 @each $name, $color in $colors {
+	$use-light: true;
+	$use-dark: true;
+	@if(type-of($color) == 'map'){
+		$data: $color;
+		$color: map-get($data, "main");
+		@if (map-has-key($data, "skip-light")){
+			$use-light: not map-get($data, "skip-light");
+		}
+		@if (map-has-key($data, "skip-dark")){
+			$use-light: not map-get($data, "skip-dark");
+		}
+	}
 	.text-#{$name} {
 		color: $color;
 	}
 	.#{$name} {
 		background-color: $color;
 	}
-	@each $light, $val in $lighten {
-		.text-#{$name}.#{$light} {
-			color: lighten($color, $val)
-		}
-		.#{$name}.#{$light} {
-			background-color: lighten($color, $val);
+	@if($use-light) {
+		@each $light, $val in $lighten {
+			.text-#{$name}.#{$light} {
+				color: lighten($color, $val)
+			}
+			.#{$name}.#{$light} {
+				background-color: lighten($color, $val);
+			}
 		}
 	}
-	@each $dark, $val in $darken {
-		.text-#{$name}.#{$dark} {
-			color: darken($color, $val)
-		}
-		.#{$name}.#{$dark} {
-			background-color: darken($color, $val);
+	@if($use-dark){
+		@each $dark, $val in $darken {
+			.text-#{$name}.#{$dark} {
+				color: darken($color, $val)
+			}
+			.#{$name}.#{$dark} {
+				background-color: darken($color, $val);
+			}
 		}
 	}
 }
