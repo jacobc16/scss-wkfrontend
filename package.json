@@ -1,6 +1,6 @@
 {
   "name": "scss-wkfrontend",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A set of front end tools/components",
   "main": "index.js",
   "dependencies": {
