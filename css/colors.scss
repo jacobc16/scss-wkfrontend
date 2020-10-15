@@ -71,6 +71,8 @@ $darken: (
 @each $name, $color in $colors {
 	$use-light: true;
 	$use-dark: true;
+
+	// Check if color is a map and set color to the main color
 	@if(type-of($color) == 'map'){
 		$data: $color;
 		$color: map-get($data, "main");
@@ -81,12 +83,28 @@ $darken: (
 			$use-light: not map-get($data, "skip-dark");
 		}
 	}
+
+	// Create text color
 	.text-#{$name} {
 		color: $color;
 	}
+
+	// Create background color
 	.#{$name} {
 		background-color: $color;
 	}
+
+	// Create a btn specific color with hover and transition
+	.btn.#{$name} {
+		background-color: $color;
+		transition: background-color 200ms;
+
+		&:hover {
+			background-color: darken($color, 5%);
+		}
+	}
+
+	// Create lightened versions of the color
 	@if($use-light) {
 		@each $light, $val in $lighten {
 			.text-#{$name}.#{$light} {
@@ -97,6 +115,8 @@ $darken: (
 			}
 		}
 	}
+
+	// Create darkened versions of the color
 	@if($use-dark){
 		@each $dark, $val in $darken {
 			.text-#{$name}.#{$dark} {
