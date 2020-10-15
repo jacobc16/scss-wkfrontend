@@ -1,6 +1,6 @@
 {
   "name": "scss-wkfrontend",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A set of front end tools/components",
   "main": "index.js",
   "dependencies": {
@@ -11,7 +11,8 @@
   "scripts": {
     "build": "sass css/wkfrontend.scss css/wkfrontend.css",
     "minify": "csso css/wkfrontend.css -o css/wkfrontend.min.css",
-    "final": "npm run build && npm run minify"
+    "final": "npm run build && npm run minify",
+    "update": "npm run final && npm publish"
   },
   "repository": {
     "type": "git",

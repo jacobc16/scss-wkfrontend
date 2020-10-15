@@ -73,18 +73,18 @@ $darken: (
 		background-color: $color;
 	}
 	@each $light, $val in $lighten {
-		.text-#{$name} .#{$light} {
+		.text-#{$name}.#{$light} {
 			color: lighten($color, $val)
 		}
-		.#{$name} .#{$light} {
+		.#{$name}.#{$light} {
 			background-color: lighten($color, $val);
 		}
 	}
 	@each $dark, $val in $darken {
-		.text-#{$name} .#{$dark} {
+		.text-#{$name}.#{$dark} {
 			color: darken($color, $val)
 		}
-		.#{$name} .#{$dark} {
+		.#{$name}.#{$dark} {
 			background-color: darken($color, $val);
 		}
 	}
