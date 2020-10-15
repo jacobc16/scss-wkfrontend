@@ -10,7 +10,11 @@ $green: (
   "main": #27ae60
 );
 
-$teel: (
+$turq: (
+  "main": #1abc9c
+);
+
+$teal: (
   "main": #16a085
 );
 
@@ -30,6 +34,10 @@ $orange: (
   "main": #e67e22
 );
 
+$dark-orange: (
+  "main": #d35400
+);
+
 $blue: (
   "main": #3498db
 );
@@ -38,17 +46,39 @@ $dark-blue: (
   "main": #2980b9
 );
 
+$purple: (
+  "main": #9b59b6
+);
+
+$dark-purple: (
+  "main": #8e44ad
+);
+
+$black: (
+  "main": #34495e
+);
+
+$dark-black: (
+  "main": #2c3e50
+);
+
 $colors: (
   "white": $white,
   "success": $success,
   "green": $green,
-  "teel": $teel,
+  "turq": $turq,
+  "teal": $teal,
   "error": $error,
   "red": $red,
   "warn": $warn,
   "orange": $orange,
+  "darkorange": $dark-orange,
   "blue": $blue,
   "darkblue": $dark-blue,
+  "purple": $purple,
+  "darkpurple": $dark-purple,
+  "black": $black,
+  "darkblack": $dark-black
 );
 
 @each $name, $data in $colors {
