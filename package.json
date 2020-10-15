@@ -3,10 +3,11 @@
   "version": "1.0.3",
   "description": "A set of front end tools/components",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "js-wktools": "^2.0.0"
+  },
   "devDependencies": {
     "csso-cli": "^3.0.0",
-    "js-wktools": "^2.0.0",
     "sass": "^1.27.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
