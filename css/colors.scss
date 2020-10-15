@@ -1,66 +1,34 @@
-$white: (
-  "main": #ffffff
-);
+$white: #ffffff;
 
-$success: (
-  "main": #2ecc71
-);
+$success: #2ecc71;
 
-$green: (
-  "main": #27ae60
-);
+$green: #27ae60;
 
-$turq: (
-  "main": #1abc9c
-);
+$turq: #1abc9c;
 
-$teal: (
-  "main": #16a085
-);
+$teal: #16a085;
 
-$error: (
-  "main": #e74c3c
-);
+$error: #e74c3c;
 
-$red: (
-  "main": #c0392b
-);
+$red: #c0392b;
 
-$warn: (
-  "main": #f1c40f
-);
+$warn: #f1c40f;
 
-$orange: (
-  "main": #e67e22
-);
+$orange: #e67e22;
 
-$dark-orange: (
-  "main": #d35400
-);
+$dark-orange: #d35400;
 
-$blue: (
-  "main": #3498db
-);
+$blue: #3498db;
 
-$dark-blue: (
-  "main": #2980b9
-);
+$dark-blue: #2980b9;
 
-$purple: (
-  "main": #9b59b6
-);
+$purple: #9b59b6;
 
-$dark-purple: (
-  "main": #8e44ad
-);
+$dark-purple: #8e44ad;
 
-$black: (
-  "main": #34495e
-);
+$black: #34495e;
 
-$dark-black: (
-  "main": #2c3e50
-);
+$dark-black: #2c3e50;
 
 $colors: (
   "white": $white,
@@ -81,11 +49,43 @@ $colors: (
   "darkblack": $dark-black
 );
 
-@each $name, $data in $colors {
+$lighten: (
+  "lighten-1": 5%,
+  "lighten-2": 10%,
+  "lighten-3": 15%,
+  "lighten-4": 20%,
+  "lighten-5": 25%
+);
+
+$darken: (
+  "darken-1": 5%,
+  "darken-2": 10%,
+  "darken-3": 15%,
+  "darken-4": 20%,
+  "darken-5": 25%
+);
+
+@each $name, $color in $colors {
   .text-#{$name} {
-    color: map-get($data, "main")
+    color: $color;
   }
   .#{$name} {
-    background-color: map-get($data, "main");
+    background-color: $color;
+  }
+  @each $light, $val in $lighten {
+    .text-#{$name} .#{$light} {
+      color: lighten($color, $val)
+    }
+    .#{$name} .#{$light} {
+      background-color: lighten($color, $val);
+    }
+  }
+  @each $dark, $val in $darken {
+    .text-#{$name} .#{$dark} {
+      color: darken($color, $val)
+    }
+    .#{$name} .#{$dark} {
+      background-color: darken($color, $val);
+    }
   }
 }
