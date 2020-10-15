@@ -31,61 +31,61 @@ $black: #34495e;
 $dark-black: #2c3e50;
 
 $colors: (
-  "white": $white,
-  "success": $success,
-  "green": $green,
-  "turq": $turq,
-  "teal": $teal,
-  "error": $error,
-  "red": $red,
-  "warn": $warn,
-  "orange": $orange,
-  "darkorange": $dark-orange,
-  "blue": $blue,
-  "darkblue": $dark-blue,
-  "purple": $purple,
-  "darkpurple": $dark-purple,
-  "black": $black,
-  "darkblack": $dark-black
+	"white": $white,
+	"success": $success,
+	"green": $green,
+	"turq": $turq,
+	"teal": $teal,
+	"error": $error,
+	"red": $red,
+	"warn": $warn,
+	"orange": $orange,
+	"darkorange": $dark-orange,
+	"blue": $blue,
+	"darkblue": $dark-blue,
+	"purple": $purple,
+	"darkpurple": $dark-purple,
+	"black": $black,
+	"darkblack": $dark-black
 );
 
 $lighten: (
-  "lighten-1": 5%,
-  "lighten-2": 10%,
-  "lighten-3": 15%,
-  "lighten-4": 20%,
-  "lighten-5": 25%
+	"lighten-1": 5%,
+	"lighten-2": 10%,
+	"lighten-3": 15%,
+	"lighten-4": 20%,
+	"lighten-5": 25%
 );
 
 $darken: (
-  "darken-1": 5%,
-  "darken-2": 10%,
-  "darken-3": 15%,
-  "darken-4": 20%,
-  "darken-5": 25%
+	"darken-1": 5%,
+	"darken-2": 10%,
+	"darken-3": 15%,
+	"darken-4": 20%,
+	"darken-5": 25%
 );
 
 @each $name, $color in $colors {
-  .text-#{$name} {
-    color: $color;
-  }
-  .#{$name} {
-    background-color: $color;
-  }
-  @each $light, $val in $lighten {
-    .text-#{$name} .#{$light} {
-      color: lighten($color, $val)
-    }
-    .#{$name} .#{$light} {
-      background-color: lighten($color, $val);
-    }
-  }
-  @each $dark, $val in $darken {
-    .text-#{$name} .#{$dark} {
-      color: darken($color, $val)
-    }
-    .#{$name} .#{$dark} {
-      background-color: darken($color, $val);
-    }
-  }
+	.text-#{$name} {
+		color: $color;
+	}
+	.#{$name} {
+		background-color: $color;
+	}
+	@each $light, $val in $lighten {
+		.text-#{$name} .#{$light} {
+			color: lighten($color, $val)
+		}
+		.#{$name} .#{$light} {
+			background-color: lighten($color, $val);
+		}
+	}
+	@each $dark, $val in $darken {
+		.text-#{$name} .#{$dark} {
+			color: darken($color, $val)
+		}
+		.#{$name} .#{$dark} {
+			background-color: darken($color, $val);
+		}
+	}
 }
