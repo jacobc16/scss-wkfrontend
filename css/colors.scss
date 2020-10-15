@@ -1,0 +1,61 @@
+$white: (
+  "main": #ffffff
+);
+
+$success: (
+  "main": #2ecc71
+);
+
+$green: (
+  "main": #27ae60
+);
+
+$teel: (
+  "main": #16a085
+);
+
+$error: (
+  "main": #e74c3c
+);
+
+$red: (
+  "main": #c0392b
+);
+
+$warn: (
+  "main": #f1c40f
+);
+
+$orange: (
+  "main": #e67e22
+);
+
+$blue: (
+  "main": #3498db
+);
+
+$dark-blue: (
+  "main": #2980b9
+);
+
+$colors: (
+  "white": $white,
+  "success": $success,
+  "green": $green,
+  "teel": $teel,
+  "error": $error,
+  "red": $red,
+  "warn": $warn,
+  "orange": $orange,
+  "blue": $blue,
+  "darkblue": $dark-blue,
+);
+
+@each $name, $data in $colors {
+  .text-#{$name} {
+    color: map-get($data, "main")
+  }
+  .#{$name} {
+    background-color: map-get($data, "main");
+  }
+}
