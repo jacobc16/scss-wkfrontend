@@ -6,6 +6,14 @@
   background-color: #ffffff;
 }
 
+.btn.white {
+  background-color: #ffffff;
+  transition: background-color 200ms;
+}
+.btn.white:hover {
+  background-color: #f2f2f2;
+}
+
 .text-white.darken-1 {
   color: #f2f2f2;
 }
@@ -52,6 +60,14 @@
 
 .success {
   background-color: #2ecc71;
+}
+
+.btn.success {
+  background-color: #2ecc71;
+  transition: background-color 200ms;
+}
+.btn.success:hover {
+  background-color: #29b765;
 }
 
 .text-success.lighten-1 {
@@ -142,6 +158,14 @@
   background-color: #27ae60;
 }
 
+.btn.green {
+  background-color: #27ae60;
+  transition: background-color 200ms;
+}
+.btn.green:hover {
+  background-color: #229955;
+}
+
 .text-green.lighten-1 {
   color: #2cc36b;
 }
@@ -228,6 +252,14 @@
 
 .turq {
   background-color: #1abc9c;
+}
+
+.btn.turq {
+  background-color: #1abc9c;
+  transition: background-color 200ms;
+}
+.btn.turq:hover {
+  background-color: #17a689;
 }
 
 .text-turq.lighten-1 {
@@ -318,6 +350,14 @@
   background-color: #16a085;
 }
 
+.btn.teal {
+  background-color: #16a085;
+  transition: background-color 200ms;
+}
+.btn.teal:hover {
+  background-color: #138a72;
+}
+
 .text-teal.lighten-1 {
   color: #19b698;
 }
@@ -398,91 +438,99 @@
   background-color: #073028;
 }
 
-.text-error {
+.text-danger {
   color: #e74c3c;
 }
 
-.error {
+.danger {
   background-color: #e74c3c;
 }
 
-.text-error.lighten-1 {
-  color: #ea6153;
+.btn.danger {
+  background-color: #e74c3c;
+  transition: background-color 200ms;
 }
-
-.error.lighten-1 {
-  background-color: #ea6153;
-}
-
-.text-error.lighten-2 {
-  color: #ed7669;
-}
-
-.error.lighten-2 {
-  background-color: #ed7669;
-}
-
-.text-error.lighten-3 {
-  color: #ef8b80;
-}
-
-.error.lighten-3 {
-  background-color: #ef8b80;
-}
-
-.text-error.lighten-4 {
-  color: #f29f97;
-}
-
-.error.lighten-4 {
-  background-color: #f29f97;
-}
-
-.text-error.lighten-5 {
-  color: #f5b4ae;
-}
-
-.error.lighten-5 {
-  background-color: #f5b4ae;
-}
-
-.text-error.darken-1 {
-  color: #e43725;
-}
-
-.error.darken-1 {
+.btn.danger:hover {
   background-color: #e43725;
 }
 
-.text-error.darken-2 {
+.text-danger.lighten-1 {
+  color: #ea6153;
+}
+
+.danger.lighten-1 {
+  background-color: #ea6153;
+}
+
+.text-danger.lighten-2 {
+  color: #ed7669;
+}
+
+.danger.lighten-2 {
+  background-color: #ed7669;
+}
+
+.text-danger.lighten-3 {
+  color: #ef8b80;
+}
+
+.danger.lighten-3 {
+  background-color: #ef8b80;
+}
+
+.text-danger.lighten-4 {
+  color: #f29f97;
+}
+
+.danger.lighten-4 {
+  background-color: #f29f97;
+}
+
+.text-danger.lighten-5 {
+  color: #f5b4ae;
+}
+
+.danger.lighten-5 {
+  background-color: #f5b4ae;
+}
+
+.text-danger.darken-1 {
+  color: #e43725;
+}
+
+.danger.darken-1 {
+  background-color: #e43725;
+}
+
+.text-danger.darken-2 {
   color: #d62c1a;
 }
 
-.error.darken-2 {
+.danger.darken-2 {
   background-color: #d62c1a;
 }
 
-.text-error.darken-3 {
+.text-danger.darken-3 {
   color: #bf2718;
 }
 
-.error.darken-3 {
+.danger.darken-3 {
   background-color: #bf2718;
 }
 
-.text-error.darken-4 {
+.text-danger.darken-4 {
   color: #a82315;
 }
 
-.error.darken-4 {
+.danger.darken-4 {
   background-color: #a82315;
 }
 
-.text-error.darken-5 {
+.text-danger.darken-5 {
   color: #921e12;
 }
 
-.error.darken-5 {
+.danger.darken-5 {
   background-color: #921e12;
 }
 
@@ -492,6 +540,14 @@
 
 .red {
   background-color: #c0392b;
+}
+
+.btn.red {
+  background-color: #c0392b;
+  transition: background-color 200ms;
+}
+.btn.red:hover {
+  background-color: #ab3326;
 }
 
 .text-red.lighten-1 {
@@ -582,6 +638,14 @@
   background-color: #f1c40f;
 }
 
+.btn.warn {
+  background-color: #f1c40f;
+  transition: background-color 200ms;
+}
+.btn.warn:hover {
+  background-color: #dab10d;
+}
+
 .text-warn.lighten-1 {
   color: #f2ca27;
 }
@@ -668,6 +732,14 @@
 
 .orange {
   background-color: #e67e22;
+}
+
+.btn.orange {
+  background-color: #e67e22;
+  transition: background-color 200ms;
+}
+.btn.orange:hover {
+  background-color: #d67118;
 }
 
 .text-orange.lighten-1 {
@@ -758,6 +830,14 @@
   background-color: #d35400;
 }
 
+.btn.darkorange {
+  background-color: #d35400;
+  transition: background-color 200ms;
+}
+.btn.darkorange:hover {
+  background-color: #ba4a00;
+}
+
 .text-darkorange.lighten-1 {
   color: #ed5e00;
 }
@@ -844,6 +924,14 @@
 
 .blue {
   background-color: #3498db;
+}
+
+.btn.blue {
+  background-color: #3498db;
+  transition: background-color 200ms;
+}
+.btn.blue:hover {
+  background-color: #258cd1;
 }
 
 .text-blue.lighten-1 {
@@ -934,6 +1022,14 @@
   background-color: #2980b9;
 }
 
+.btn.darkblue {
+  background-color: #2980b9;
+  transition: background-color 200ms;
+}
+.btn.darkblue:hover {
+  background-color: #2472a4;
+}
+
 .text-darkblue.lighten-1 {
   color: #2e8ece;
 }
@@ -1020,6 +1116,14 @@
 
 .purple {
   background-color: #9b59b6;
+}
+
+.btn.purple {
+  background-color: #9b59b6;
+  transition: background-color 200ms;
+}
+.btn.purple:hover {
+  background-color: #8f4bab;
 }
 
 .text-purple.lighten-1 {
@@ -1110,6 +1214,14 @@
   background-color: #8e44ad;
 }
 
+.btn.darkpurple {
+  background-color: #8e44ad;
+  transition: background-color 200ms;
+}
+.btn.darkpurple:hover {
+  background-color: #7f3d9b;
+}
+
 .text-darkpurple.lighten-1 {
   color: #9b50ba;
 }
@@ -1196,6 +1308,14 @@
 
 .black {
   background-color: #34495e;
+}
+
+.btn.black {
+  background-color: #34495e;
+  transition: background-color 200ms;
+}
+.btn.black:hover {
+  background-color: #2b3c4e;
 }
 
 .text-black.lighten-1 {
@@ -1286,6 +1406,14 @@
   background-color: #2c3e50;
 }
 
+.btn.darkblack {
+  background-color: #2c3e50;
+  transition: background-color 200ms;
+}
+.btn.darkblack:hover {
+  background-color: #233140;
+}
+
 .text-darkblack.lighten-1 {
   color: #354b60;
 }
@@ -1367,7 +1495,33 @@
 }
 
 .btn {
+  position: relative;
   padding: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 20px;
+  border-width: 0;
+}
+
+span.wave-temp {
+  position: absolute;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: wave-animation 1s linear infinite;
+}
+@keyframes wave-animation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=wkfrontend.css.map */
