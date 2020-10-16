@@ -1,3 +1,29 @@
 .btn {
+	position: relative;
 	padding: 10px;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 20px;
+	border-width: 0;
+}
+
+span.wave-temp {
+	position: absolute;
+	background-color: white;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	border-radius: 50%;
+	animation: wave-animation 1s linear infinite;
+	@keyframes wave-animation {
+		0% {
+			width: 0;
+			height: 0;
+			opacity: 0.5;
+		}
+		100% {
+			width: 500px;
+			height: 500px;
+			opacity: 0;
+		}
+	}
 }
