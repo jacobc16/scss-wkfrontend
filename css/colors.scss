@@ -102,6 +102,10 @@ $darken: (
 		&:hover {
 			background-color: darken($color, 5%);
 		}
+
+		&:focus {
+			box-shadow: 0 0 0 3px rgba($color, 0.6)
+		}
 	}
 
 	// Create lightened versions of the color
