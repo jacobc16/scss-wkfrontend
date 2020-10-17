@@ -51,7 +51,7 @@
 
 		if (color !== "white"){
 			_lighten.forEach((light) => {
-				if (color === "lightgray" && light !== "lighten-1") {
+				if ((color === "gray" && light === "lighten-5") || (color === "lightgray" && light !== "lighten-1")) {
 					return;
 				}
 				let clr = document.createElement("div")
