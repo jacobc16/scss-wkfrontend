@@ -51,6 +51,9 @@
 
 		if (color !== "white"){
 			_lighten.forEach((light) => {
+				if (color === "lightgray" && light !== "lighten-1") {
+					return;
+				}
 				let clr = document.createElement("div")
 				$(clr).addClass(color+ " " + light).css({
 					padding: "10px",

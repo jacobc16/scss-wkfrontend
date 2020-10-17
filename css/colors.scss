@@ -151,7 +151,7 @@ $darken: (
 	// Create lightened versions of the color
 	@if($use-light) {
 		@each $light, $val in $lighten {
-			@if ($data != null and map-has-key($data, "ignore-light") and not map-has-key(map-get($data, "ignore-light"), $light)) {
+			@if ($data == null or (map-has-key($data, "ignore-light") and not map-has-key(map-get($data, "ignore-light"), $light))) {
 				.text-#{$name}.text-#{$light} {
 					color: lighten($color, $val) !important;
 				}
@@ -165,7 +165,7 @@ $darken: (
 	// Create darkened versions of the color
 	@if($use-dark){
 		@each $dark, $val in $darken {
-			@if ($data != null and map-has-key($data, "ignore-dark") and not map-has-key(map-get($data, "ignore-dark"), $dark)) {
+			@if ($data == null or (map-has-key($data, "ignore-dark") and not map-has-key(map-get($data, "ignore-dark"), $dark))) {
 				.text-#{$name}.text-#{$dark} {
 					color: darken($color, $val) !important;
 				}
