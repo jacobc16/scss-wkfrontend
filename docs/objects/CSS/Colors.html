@@ -1,0 +1,105 @@
+<setup title="Colors">
+	<div id="desc" class="text-white text-darken-2">
+		There is a wide variety of colors available to you
+	</div>
+</setup>
+
+<script id="inline-script">
+	let _colors = [
+		"white",
+		"gray",
+		"lightgray",
+		"darkgray",
+		"success",
+		"green",
+		"turq",
+		"teal",
+		"danger",
+		"red",
+		"warn",
+		"orange",
+		"darkorange",
+		"blue",
+		"darkblue",
+		"purple",
+		"darkpurple",
+		"black",
+		"darkblack"
+	];
+
+	let _lighten = [
+		"lighten-5",
+		"lighten-4",
+		"lighten-3",
+		"lighten-2",
+		"lighten-1"
+	];
+
+	let _darken = [
+		"darken-1",
+		"darken-2",
+		"darken-3",
+		"darken-4",
+		"darken-5"
+	];
+
+	_colors.forEach((color) => {
+		let txt_color = "black"
+		if (color === "black" || color === "darkblack") {
+			txt_color = "white";
+		}
+
+		if (color !== "white"){
+			_lighten.forEach((light) => {
+				let clr = document.createElement("div")
+				$(clr).addClass(color+ " " + light).css({
+					padding: "10px",
+					color: txt_color,
+				});
+
+				$("#colors").append(clr);
+
+				$(clr).text($(clr).toHex() + " " + color+ " " + light);
+			});
+		}
+
+		let clr = document.createElement("div")
+		$(clr).addClass(color).css({
+			padding: "10px",
+			color: txt_color,
+		});
+		$("#colors").append(clr);
+
+		$(clr).text($(clr).toHex() + " " + color);
+
+		_darken.forEach((dark) => {
+			let clr = document.createElement("div")
+			$(clr).addClass(color+ " " + dark).css({
+				padding: "10px",
+				color: txt_color,
+			});
+			$("#colors").append(clr);
+
+			$(clr).text($(clr).toHex() + " " + color+ " " + dark);
+		});
+	});
+</script>
+
+<div>
+	<p class="text-white text-darken-2">You can use the colors file in any scss files and use the built in function to get the color you want.</p>
+	<pre><code class="scss">colors.get("black", "lighten-1");</code></pre>
+</div>
+
+<div>
+	<h2 class="text-white">Color Palette</h2>
+	<div id="colors"></div>
+</div>
+
+<pre><code class="html"><button class="btn success wave text-white">Success Button</button></code></pre>
+<button class="btn success wave text-white">Success Button</button>
+
+<pre><code class="html"><button class="btn danger wave text-white">Error Button</button></code></pre>
+<button class="btn danger wave text-white">Error Button</button>
+
+<pre><code class="html"><button class="btn warn wave text-white">Warn Button</button></code></pre>
+<button class="btn warn wave text-white">Warn Button</button>
