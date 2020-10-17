@@ -3,6 +3,15 @@ $white: (
 	"skip-light": true
 );
 
+$gray: #bdc3c7;
+
+$lightgray: (
+	"main": #ecf0f1,
+	ignore-light: ("lighten-5": true, "lighten-4": true, "lighten-3": true, "lighten-2": true)
+);
+
+$darkgray: #7f8c8d;
+
 $success: #2ecc71;
 
 $green: #27ae60;
@@ -35,6 +44,9 @@ $dark-black: #2c3e50;
 
 $colors: (
 	"white": $white,
+	"gray": $gray,
+	"lightgray": $lightgray,
+	"darkgray": $darkgray,
 	"success": $success,
 	"green": $green,
 	"turq": $turq,
@@ -51,6 +63,34 @@ $colors: (
 	"black": $black,
 	"darkblack": $dark-black
 );
+
+@function get($color, $sec: null){
+	@if (map-has-key($colors, $color)) {
+		@if(map-get($colors, $color) == 'map'){
+			$color: map-get(map-get($colors, $color), "main");
+		}
+		@else {
+			$color: map-get($colors, $color);
+		}
+	}
+	@else {
+		@error "Unknown color: #{$color}";
+	}
+
+	@if($sec != null) {
+		@if(map-has_key($lighten, $sec)) {
+			$color: lighten($color, map-get($lighten, $sec));
+		}
+		@else if(map-has_key($darken, $sec)) {
+			$color: darken($color, map-get($darken, $sec));
+		}
+		@else {
+			@error "Inviald light/darken value: #{$sec}";
+		}
+	}
+
+	@return $color;
+}
 
 $lighten: (
 	"lighten-1": 5%,
@@ -71,7 +111,7 @@ $darken: (
 @each $name, $color in $colors {
 	$use-light: true;
 	$use-dark: true;
-
+	$data: null;
 	// Check if color is a map and set color to the main color
 	@if(type-of($color) == 'map'){
 		$data: $color;
@@ -86,36 +126,38 @@ $darken: (
 
 	// Create text color
 	.text-#{$name} {
-		color: $color;
+		color: $color !important;
 	}
 
 	// Create background color
 	.#{$name} {
-		background-color: $color;
+		background-color: $color !important;
 	}
 
 	// Create a btn specific color with hover and transition
 	.btn.#{$name} {
-		background-color: $color;
-		transition: background-color 200ms;
+		background-color: $color !important;
+		transition: background-color 200ms, box-shadow 300ms !important;
 
 		&:hover {
-			background-color: darken($color, 5%);
+			background-color: darken($color, 5%) !important;
 		}
 
 		&:focus {
-			box-shadow: 0 0 0 3px rgba($color, 0.6)
+			box-shadow: 0 0 0 3px rgba($color, 0.6) !important;
 		}
 	}
 
 	// Create lightened versions of the color
 	@if($use-light) {
 		@each $light, $val in $lighten {
-			.text-#{$name}.#{$light} {
-				color: lighten($color, $val)
-			}
-			.#{$name}.#{$light} {
-				background-color: lighten($color, $val);
+			@if ($data != null and map-has-key($data, "ignore-light") and not map-has-key(map-get($data, "ignore-light"), $light)) {
+				.text-#{$name}.text-#{$light} {
+					color: lighten($color, $val) !important;
+				}
+				.#{$name}.#{$light} {
+					background-color: lighten($color, $val) !important;
+				}
 			}
 		}
 	}
@@ -123,11 +165,13 @@ $darken: (
 	// Create darkened versions of the color
 	@if($use-dark){
 		@each $dark, $val in $darken {
-			.text-#{$name}.#{$dark} {
-				color: darken($color, $val)
-			}
-			.#{$name}.#{$dark} {
-				background-color: darken($color, $val);
+			@if ($data != null and map-has-key($data, "ignore-dark") and not map-has-key(map-get($data, "ignore-dark"), $dark)) {
+				.text-#{$name}.text-#{$dark} {
+					color: darken($color, $val) !important;
+				}
+				.#{$name}.#{$dark} {
+					background-color: darken($color, $val) !important;
+				}
 			}
 		}
 	}
