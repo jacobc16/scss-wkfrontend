@@ -19,16 +19,16 @@ function loadHtml(id) {
 $(()=>{
 	let files = [];
 	$.get("./php/index.php", (data)=>{
-		let html = ""
+		let html = "";
 
 		Object.keys(data).forEach((elem) => {
 			html += "<li><h2>" + elem + "</h2></li>";
 			Object.keys(data[elem]).forEach((elm) => {
-				let nelm = elm.replace(".html", "")
+				let nelm = elm.replace(".html", "");
 				html_files[nelm] = data[elem][elm];
-				html +="<ul class='nested'>"
+				html +="<ul class='nested'>";
 				html += "<li><a href='#' onclick='loadHtml(\""+nelm+"\")' id='"+nelm+"'>" + nelm + "</li></a>";
-				html += "</ul>"
+				html += "</ul>";
 			});
 		});
 

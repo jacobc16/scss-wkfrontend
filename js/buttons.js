@@ -15,8 +15,7 @@ function getWaveColor(elem){
 }
 
 wkfe.InitButtions = () => {
-	$(".btn.wave").off("click");
-	$(".btn.wave").on("click", (elem) => {
+	const method = (elem) => {
 		let x = elem.clientX - elem.target.offsetLeft;
 		let y = elem.clientY - elem.target.offsetTop + window.pageYOffset;
 
@@ -38,7 +37,9 @@ wkfe.InitButtions = () => {
 		setTimeout(() =>{
 			ripples.remove();
 		}, 1000)
-	});
+	};
+	$(".btn.wave").off("click", method);
+	$(".btn.wave").click(method);
 }
 
 $(() => {
