@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "csso-cli": "^3.0.0",
-    "js-wktools": "^2.1.1",
+    "js-wktools": "^2.1.5",
     "sass": "^1.27.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
